@@ -29,6 +29,7 @@ class App extends Component {
         
         <hr /> <br />
 
+        {this.renderCaution()}
         <ItemList items={this.state.items} func={this.deleteItem}/>
 
       </div>
@@ -74,6 +75,12 @@ class App extends Component {
         });        
       }        
     }
+  }
+
+  renderCaution()
+  {
+    if(this.state.items.length == 0)
+      return <h2>No items here yet!</h2>
   }
 
   p(e)
